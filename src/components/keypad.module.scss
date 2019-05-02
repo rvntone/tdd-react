@@ -1,0 +1,11 @@
+.keypad {
+  width: calc(83px * 4);
+  .numberKeysContainer {
+    display: inline-block;
+    width: calc(82px * 3);
+  }
+  .operatorKeysContainer {
+    display: inline-block;
+    width: 82px;
+  }
+}
