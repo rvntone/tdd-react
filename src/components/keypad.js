@@ -8,12 +8,20 @@ export default class Keypad extends Component {
     super(props);
     this.onNumberClick = this.onNumberClick.bind(this);
     this.onOperatorClick = this.onOperatorClick.bind(this);
+    this.onDotClick = this.onDotClick.bind(this);
+    this.onClearClick = this.onClearClick.bind(this);
   }
   onNumberClick(number) {
     this.props.selectNumber(number);
   }
   onOperatorClick(number) {
     this.props.selectOperator(number);
+  }
+  onDotClick(number) {
+    this.props.selectDot(number);
+  }
+  onClearClick(number) {
+    this.props.selectClear(number);
   }
   render() {
     const numberKeyProps = {
@@ -22,6 +30,14 @@ export default class Keypad extends Component {
     };
     const operatorKeyProps = {
       press: this.onOperatorClick,
+      className: styles.key,
+    };
+    const dotKeyProps = {
+      press: this.onDotClick,
+      className: styles.key,
+    };
+    const clearKeyProps = {
+      press: this.onClearClick,
       className: styles.key,
     };
     return (
@@ -45,7 +61,9 @@ export default class Keypad extends Component {
           <Key {...operatorKeyProps} value={'/'} />
         </div>
         <div>
+          <Key {...dotKeyProps} value={'.'} />
           <Key {...operatorKeyProps} value={'='} />
+          <Key {...clearKeyProps} value={'ce'} />
         </div>
       </div>
     );
