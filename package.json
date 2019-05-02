@@ -135,5 +135,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "enzyme-to-json": "^3.3.5"
   }
 }
