@@ -1,11 +1,18 @@
 .keypad {
   width: calc(83px * 4);
+  background-color: #666;
   .numberKeysContainer {
     display: inline-block;
     width: calc(82px * 3);
   }
   .operatorKeysContainer {
+    background-color: #22222290;
     display: inline-block;
     width: 82px;
+  }
+  .otherKeysContainer {
+    width: calc(83px * 4);
+    text-align: left;
+    margin-left: 2px;
   }
 }

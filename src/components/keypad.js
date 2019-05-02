@@ -60,7 +60,7 @@ export default class Keypad extends Component {
           <Key {...operatorKeyProps} value={'*'} />
           <Key {...operatorKeyProps} value={'/'} />
         </div>
-        <div>
+        <div className={styles.otherKeysContainer}>
           <Key {...dotKeyProps} value={'.'} />
           <Key {...operatorKeyProps} value={'='} />
           <Key {...clearKeyProps} value={'ce'} />

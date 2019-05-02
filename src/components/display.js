@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './keypad.module.scss';
+import styles from './display.module.scss';
 
 export default class Display extends Component {
   renderMemoryIndicator() {
