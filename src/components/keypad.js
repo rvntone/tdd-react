@@ -44,6 +44,9 @@ export default class Keypad extends Component {
           <Key {...operatorKeyProps} value={'*'} />
           <Key {...operatorKeyProps} value={'/'} />
         </div>
+        <div>
+          <Key {...operatorKeyProps} value={'='} />
+        </div>
       </div>
     );
   }

@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 import Keypad from './keypad';
 import Key from './key';
 
-const operators = ['+', '-', '*', '/'];
+const operators = ['+', '-', '*', '/', '='];
 describe('Keypad component', () => {
   test('Should render 0 to 9 keys', () => {
     const wrapper = shallow(<Keypad />);
@@ -15,7 +15,7 @@ describe('Keypad component', () => {
     }
     expect(wrapper.containsAllMatchingElements(keys)).toBeTruthy();
   });
-  test('Should render + - * / keys', () => {
+  test('Should render + - * / = keys', () => {
     const wrapper = shallow(<Keypad />);
     const keys = operators.map(key => {
       return <Key value={key} />;
