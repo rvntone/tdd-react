@@ -137,6 +137,7 @@
     ]
   },
   "devDependencies": {
-    "enzyme-to-json": "^3.3.5"
+    "enzyme-to-json": "^3.3.5",
+    "node-sass": "^4.12.0"
   }
 }
