@@ -23,11 +23,27 @@ export default class Keypad extends Component {
   onClearClick(number) {
     this.props.selectClear(number);
   }
-  render() {
+  renderNumbers() {
     const numberKeyProps = {
       press: this.onNumberClick,
       className: styles.key,
     };
+    return (
+      <div className={styles['number-keys-container']}>
+        <Key {...numberKeyProps} value={1} />
+        <Key {...numberKeyProps} value={2} />
+        <Key {...numberKeyProps} value={3} />
+        <Key {...numberKeyProps} value={4} />
+        <Key {...numberKeyProps} value={5} />
+        <Key {...numberKeyProps} value={6} />
+        <Key {...numberKeyProps} value={7} />
+        <Key {...numberKeyProps} value={8} />
+        <Key {...numberKeyProps} value={9} />
+        <Key {...numberKeyProps} value={0} />
+      </div>
+    );
+  }
+  render() {
     const operatorKeyProps = {
       press: this.onOperatorClick,
       className: styles.key,
@@ -42,18 +58,7 @@ export default class Keypad extends Component {
     };
     return (
       <div className={styles.keypad}>
-        <div className={styles.numberKeysContainer}>
-          <Key {...numberKeyProps} value={1} />
-          <Key {...numberKeyProps} value={2} />
-          <Key {...numberKeyProps} value={3} />
-          <Key {...numberKeyProps} value={4} />
-          <Key {...numberKeyProps} value={5} />
-          <Key {...numberKeyProps} value={6} />
-          <Key {...numberKeyProps} value={7} />
-          <Key {...numberKeyProps} value={8} />
-          <Key {...numberKeyProps} value={9} />
-          <Key {...numberKeyProps} value={0} />
-        </div>
+        {this.renderNumbers()}
         <div className={styles.operatorKeysContainer}>
           <Key {...operatorKeyProps} value={'+'} />
           <Key {...operatorKeyProps} value={'-'} />

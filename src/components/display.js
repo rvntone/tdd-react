@@ -15,7 +15,7 @@ export default class Display extends Component {
     return (
       <div className={styles.display}>
         {this.renderMemoryIndicator()}
-        <span className={styles.number}>{value}</span>
+        <span className={styles.number}>{value === '' ? 0 : value}</span>
       </div>
     );
   }

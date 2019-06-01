@@ -15,4 +15,8 @@ describe('Display component', () => {
     const wrapper = shallow(<Display memory value={value} />);
     expect(wrapper.find('span.memory').text()).toEqual('M');
   });
+  test('Should zero when value is an empty string', () => {
+    const wrapper = shallow(<Display memory value={''} />);
+    expect(wrapper.find('span.number').text()).toEqual('0');
+  });
 });
