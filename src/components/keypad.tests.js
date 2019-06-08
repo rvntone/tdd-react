@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
 
 import Keypad from './keypad';
 import Key from './key';
@@ -72,7 +71,6 @@ describe('Keypad component', () => {
     const key = wrapper.find(Key).findWhere(obj => {
       return obj.text() === keyToPress;
     });
-    console.log(key.first().text());
     key.first().simulate('click');
     expect(selectClear).toBeCalledTimes(1);
   });
@@ -87,5 +85,50 @@ describe('Keypad component', () => {
     });
     key.first().simulate('click');
     expect(selectDot).toBeCalledTimes(1);
+  });
+  test('Should render memory keys', () => {
+    const wrapper = shallow(<Keypad />);
+    const keys = [
+      <Key value={'M+'} />,
+      <Key value={'Mc'} />,
+      <Key value={'M'} />,
+    ];
+    expect(wrapper.containsAllMatchingElements(keys)).toBeTruthy();
+  });
+  test('Should call memorySet when you press the M+ key', () => {
+    const memorySet = jest.fn();
+    memorySet.mockReset();
+    const keyToPress = 'M+';
+    const wrapper = mount(<Keypad memorySet={memorySet} />);
+    expect(memorySet).toBeCalledTimes(0);
+    const key = wrapper.find(Key).findWhere(obj => {
+      return obj.text() === keyToPress;
+    });
+    key.first().simulate('click');
+    expect(memorySet).toBeCalledTimes(1);
+  });
+  test('Should call memoryGet when you press the M key', () => {
+    const memoryGet = jest.fn();
+    memoryGet.mockReset();
+    const keyToPress = 'M';
+    const wrapper = mount(<Keypad memoryGet={memoryGet} />);
+    expect(memoryGet).toBeCalledTimes(0);
+    const key = wrapper.find(Key).findWhere(obj => {
+      return obj.text() === keyToPress;
+    });
+    key.first().simulate('click');
+    expect(memoryGet).toBeCalledTimes(1);
+  });
+  test('Should call memoryClear add when you press the Mc key', () => {
+    const memoryClear = jest.fn();
+    memoryClear.mockReset();
+    const keyToPress = 'Mc';
+    const wrapper = mount(<Keypad memoryClear={memoryClear} />);
+    expect(memoryClear).toBeCalledTimes(0);
+    const key = wrapper.find(Key).findWhere(obj => {
+      return obj.text() === keyToPress;
+    });
+    key.first().simulate('click');
+    expect(memoryClear).toBeCalledTimes(1);
   });
 });

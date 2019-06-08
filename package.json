@@ -85,7 +85,14 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
+      "!src/**/*.d.ts",
+      "!src/index.js",
+      "!src/serviceWorker.js",
+      "!src/components/componente.js",
+      "!src/components/otroComponente.js",
+      "!src/components/shallowTest.js",
+      "!src/serviceWorker.js",
+      "!src/serviceWorker.js"
     ],
     "setupFiles": [
       "react-app-polyfill/jsdom"

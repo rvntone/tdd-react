@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 
 import Key from './key';
 
@@ -10,7 +9,7 @@ describe('Key component', () => {
     const wrapper = shallow(<Key value={value} />);
     expect(wrapper.find('div').text()).toEqual(value);
   });
-  test('Should call to the prop press function', () => {
+  test.only('Should call to the prop press function', () => {
     const value = (Math.random() * 10).toFixed(0);
     const onClick = jest.fn();
     const wrapper = shallow(<Key press={onClick} value={value} />);

@@ -10,6 +10,9 @@ export default class Keypad extends Component {
     this.onOperatorClick = this.onOperatorClick.bind(this);
     this.onDotClick = this.onDotClick.bind(this);
     this.onClearClick = this.onClearClick.bind(this);
+    this.onMemorySet = this.onMemorySet.bind(this);
+    this.onMemoryGet = this.onMemoryGet.bind(this);
+    this.onMemoryClear = this.onMemoryClear.bind(this);
   }
   onNumberClick(number) {
     this.props.selectNumber(number);
@@ -22,6 +25,15 @@ export default class Keypad extends Component {
   }
   onClearClick(number) {
     this.props.selectClear(number);
+  }
+  onMemoryClear() {
+    this.props.memoryClear();
+  }
+  onMemoryGet() {
+    this.props.memoryGet();
+  }
+  onMemorySet() {
+    this.props.memorySet();
   }
   renderNumbers() {
     const numberKeyProps = {
@@ -56,8 +68,25 @@ export default class Keypad extends Component {
       press: this.onClearClick,
       className: styles.key,
     };
+    const memorySetProps = {
+      press: this.onMemorySet,
+      className: styles.key,
+    };
+    const memoryGetProps = {
+      press: this.onMemoryGet,
+      className: styles.key,
+    };
+    const memoryClearProps = {
+      press: this.onMemoryClear,
+      className: styles.key,
+    };
     return (
       <div className={styles.keypad}>
+        <div className={styles.memoryKeysContainer}>
+          <Key {...memorySetProps} value={'M+'} />
+          <Key {...memoryClearProps} value={'Mc'} />
+          <Key {...memoryGetProps} value={'M'} />
+        </div>
         {this.renderNumbers()}
         <div className={styles.operatorKeysContainer}>
           <Key {...operatorKeyProps} value={'+'} />
