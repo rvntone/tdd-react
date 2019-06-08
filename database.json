@@ -1,4 +1,123 @@
 {
-  "accounts": [],
+  "accounts": [
+    {
+      "id": 1,
+      "number": "11111",
+      "type": "AHORROS",
+      "createdAt": "2010-01-01 10:00:00",
+      "alias": "Mi cuenta 1111",
+      "currentAmount": 100000000.9
+    },
+    {
+      "id": 2,
+      "number": "33333",
+      "type": "CORRIENTE",
+      "createdAt": "2017-01-01 12:00:00",
+      "alias": "Mi cuenta 34333",
+      "currentAmount": 1
+    },
+    {
+      "number": "4324324",
+      "type": "AHORROS",
+      "alias": "New Account",
+      "id": 3
+    },
+    {
+      "number": "dasfd",
+      "type": "CORRIENTE",
+      "alias": "dsaf",
+      "id": 4
+    },
+    {
+      "number": "dasfd",
+      "type": "CORRIENTE",
+      "alias": "dsaf",
+      "id": 5
+    },
+    {
+      "number": "dasfd",
+      "type": "CORRIENTE",
+      "alias": "dsaf fdfsd",
+      "id": 6
+    },
+    {
+      "number": "dsada",
+      "type": "CORRIENTE",
+      "alias": "dasda",
+      "id": 7
+    },
+    {
+      "number": "dsada",
+      "type": "CORRIENTE",
+      "alias": "dasda",
+      "id": 8
+    },
+    {
+      "number": "dsada",
+      "type": "CORRIENTE",
+      "alias": "dasda",
+      "id": 9
+    },
+    {
+      "number": "dsada",
+      "type": "CORRIENTE",
+      "alias": "dasda",
+      "id": 10
+    },
+    {
+      "number": "dsada",
+      "type": "CORRIENTE",
+      "alias": "dasda",
+      "id": 11
+    },
+    {
+      "number": "fdsafas",
+      "type": "AHORROS",
+      "alias": "fsadf",
+      "id": 12
+    },
+    {
+      "number": "dsada",
+      "type": "AHORROS",
+      "alias": "dasda",
+      "id": 13
+    },
+    {
+      "number": "dsada",
+      "type": "CORRIENTE",
+      "alias": "sadas",
+      "id": 14
+    },
+    {
+      "number": "dsfasd",
+      "type": "CORRIENTE",
+      "alias": "fdsafsd",
+      "id": 15
+    },
+    {
+      "number": "fdsaf",
+      "type": "AHORROS",
+      "alias": "fdsfas",
+      "id": 16
+    },
+    {
+      "number": "afdsfsa",
+      "type": "AHORROS",
+      "alias": "fdsfsda",
+      "id": 17
+    },
+    {
+      "number": "fdsafds",
+      "type": "CORRIENTE",
+      "alias": "fadsfs",
+      "id": 18
+    },
+    {
+      "number": "fgsdg",
+      "type": "AHORROS",
+      "alias": "gdfgd",
+      "id": 19
+    }
+  ],
   "transactions": []
 }
